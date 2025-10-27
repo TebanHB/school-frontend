@@ -1,55 +1,9 @@
-# ========================================
-# GITHUB CODEOWNERS
-# Control de aprobaciones para el repositorio
-# ========================================
-# 
-# Este archivo define quién puede aprobar cambios en diferentes
-# partes del código. Las reglas se evalúan de arriba hacia abajo,
-# y la última regla que coincida es la que se aplica.
-#
-# Formato: ruta/patron @username1 @username2
-# ========================================
+# CODEOWNERS
+# Lista de propietarios de código que deben revisar y aprobar PRs.
+# Este archivo debe existir en las ramas: dev, test, demo y main.
+# Formato: <path> <owner> <owner> ...
+# Aplicar a todo el repositorio:
+* @EstebanFOS @mariogfos @marcelofos @sebasgredev @makroz
 
-# ========================================
-# 1. PROTECCIÓN DE ARCHIVOS CRÍTICOS
-# Solo SENIORS pueden aprobar estos cambios
-# ========================================
-
-# Proteger el propio archivo CODEOWNERS
-/.github/CODEOWNERS @senior1 @senior2
-
-# Proteger toda la configuración de GitHub
-/.github/** @senior1 @senior2
-
-# Archivos de configuración críticos del proyecto
-/package.json @senior1 @senior2
-/package-lock.json @senior1 @senior2
-/yarn.lock @senior1 @senior2
-/pnpm-lock.yaml @senior1 @senior2
-
-# Variables de entorno
-/.env @senior1 @senior2
-/.env.* @senior1 @senior2
-/.env.example @senior1 @senior2
-
-# Configuración de deployment
-/vercel.json @senior1 @senior2
-/docker-compose.yml @senior1 @senior2
-/Dockerfile @senior1 @senior2
-/.dockerignore @senior1 @senior2
-
-# Configuración de CI/CD
-/.github/workflows/** @senior1 @senior2
-
-# ========================================
-# 2. REGLA POR DEFECTO PARA RAMA DEV
-# SEMI-SENIORS y SENIORS pueden aprobar
-# ========================================
-# Esta regla se aplica a todos los archivos que no coincidan
-# con reglas más específicas arriba
-* @EstebanFOS @semisenior2 @senior1 @senior2
-
-# ========================================
-# 3. REGLAS OPCIONALES POR DIRECTORIO/EQUIPO
-# Descomenta y personaliza según tu estructura
-# ========================================
+# Nota: Para que GitHub exija la revisión por Code Owners, en las reglas
+# de protección de rama (Rulesets) habilite "Require review from Code Owners".
